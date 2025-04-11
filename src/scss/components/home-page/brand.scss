@@ -1,0 +1,111 @@
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+.services_brand_title {
+  margin-bottom: 16px;
+}
+.brand-slider {
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  padding-left: 16px;
+}
+
+.brand-slider--mg {
+  margin-bottom: 16px;
+}
+.brand-slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: _var.$light-grey;
+}
+
+.brand-slider__slide {
+  background-color: _var.$white;
+  border: 1px solid _var.$swiper-border;
+  border-radius: 6px;
+  padding: 16px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-slider__slide--mg {
+  margin-right: 16px;
+}
+
+.brand-slider__link {
+  width: 40px;
+  height: 40px;
+  background-image: url("/src/icons/go.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 0.4s;
+}
+.brand-slider__link:hover {
+  transform: scale(1.04);
+}
+.brand-card-desktop-container {
+  display: none;
+}
+@include _mix.xl {
+  .brand-slider {
+    display: none;
+  }
+  .brand-card-desktop-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .brand-card-desktop-wrap {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-height: 160px;
+    overflow: hidden;
+    transition: all 0.75s;
+  }
+  .brand-card-wrap--active {
+    max-height: 264px;
+  }
+  .brand-card-desktop-wrap--mg {
+    margin: 0 -6px 12px -6px;
+  }
+
+  .brand-card-desktop {
+    background-color: _var.$white;
+    border: 1px solid _var.$swiper-border;
+    border-radius: 6px;
+    padding: 20px 16px;
+    width: calc(33.074% - 30px);
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand-card-desktop--mg {
+    margin: 0 12px 16px 12px;
+  }
+  .brand-card-hidden768,
+  .brand-card-hidden1440 {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .brand-card-hidden1440 {
+    display: none;
+  }
+}
+@include _mix.xxl {
+  .brand-card-desktop {
+    width: calc((86.79% - 12px) / 4);
+  }
+
+  .brand-card-hidden1440 {
+    display: block;
+  }
+}

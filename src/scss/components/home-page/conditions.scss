@@ -1,0 +1,61 @@
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+
+.conditions {
+  border-bottom: 1px solid _var.$border;
+  padding-bottom: 40px;
+  padding-left: 20px;
+
+  &-text {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 16px;
+  }
+  &-link {
+    display: block;
+    position: relative;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    transition: all 0.4s;
+    max-width: 192px;
+  }
+  &-link__arrow-image {
+    display: block;
+    width: 24px;
+    height: 27.49px;
+    background-image: url("/src/icons/line-arrow.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    left: 100px;
+    bottom: -3px;
+  }
+}
+@include _mix.xl {
+  .conditions {
+    padding-bottom: 47px;
+    &-text {
+      max-width: 421px;
+    }
+    &-link {
+      max-width: 316px;
+      font-size: 16px;
+      &__arrow-image {
+        left: 289px;
+        bottom: -2px;
+      }
+    }
+  }
+}
+@include _mix.xxl {
+  .conditions {
+    padding-bottom: 50px;
+  }
+}

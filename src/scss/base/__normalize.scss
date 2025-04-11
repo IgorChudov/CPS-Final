@@ -1,0 +1,132 @@
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background-color: transparent;
+  outline: none;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  line-height: 1;
+  font-size: 16px;
+  min-width: 320px;
+  font-family: "TT Lakes";
+  color: _var.$black;
+  background-color: _var.$color-background;
+  height: 100%;
+  overflow-x: hidden;
+}
+.overflow-block {
+  overflow-y: hidden;
+}
+.page-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+.page-container__veil {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: _var.$veil-background;
+  z-index: 10;
+  display: none;
+}
+.page-container__veil--active {
+  display: block;
+}
+.subtitle {
+  width: 99%;
+  text-transform: uppercase;
+  padding: 16px;
+  letter-spacing: -0.2px;
+  background-color: _var.$white;
+  color: _var.$light-grey;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: -webkit-gradient(linear, left top, right top, color-stop(1.39%, #f8f8f8), to(#ffffff));
+  background: -o-linear-gradient(left, #f8f8f8 1.39%, #ffffff 100%);
+  background: linear-gradient(90deg, #f8f8f8 1.39%, #ffffff 100%);
+  border-top: 1px solid #d9fff5;
+}
+
+.veil {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  width: 24px;
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    color-stop(16.84%, #f8f8f8),
+    to(rgba(248, 248, 248, 0.0001))
+  );
+  background: -o-linear-gradient(right, #f8f8f8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+  background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+  &__services--height {
+    top: 96px;
+    height: 71px;
+  }
+  &__slide-list--height {
+    top: 0;
+    right: 0;
+    height: 36px;
+  }
+}
+@include _mix.xl {
+  .contenet_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+@include _mix.xxl {
+  .contenet_container {
+    height: 100%;
+  }
+}

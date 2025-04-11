@@ -1,2 +1,82 @@
-@use '/../src/scss/abstracts/__var';
-@use '/../src/scss/abstracts/__mix';
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+
+.footer {
+  display: block;
+  padding: 16px 16px 0px 16px;
+  border-top: 1px solid _var.$border;
+
+  &-company-info {
+    display: flex;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &-company-info__year,
+  &-company-info__text,
+  &__privacy-policy,
+  &__privacy-policy-text {
+    font-size: 14px;
+    line-height: 16px;
+    color: _var.$grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__privacy-policy {
+    display: flex;
+    transition: all 0.4s;
+  }
+  &__privacy-policy-text {
+    padding-bottom: 19px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  &__company-text--mg,
+  &__privacy-policy--mg {
+    margin-bottom: 16px;
+  }
+}
+
+.footer {
+  &__privacy-policy {
+    &:hover {
+      color: _var.$black;
+    }
+  }
+}
+
+@include _mix.xl {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 0px;
+
+    &-company-info {
+      width: 218px;
+    }
+    &-company-info__year {
+      align-items: flex-start;
+    }
+    &__company-text--mg,
+    &__privacy-policy--mg {
+      margin-bottom: 0;
+    }
+    &__privacy-policy-text {
+      padding-bottom: 0;
+      text-align: end;
+    }
+    &__privacy-policy {
+      width: 214px;
+    }
+    &__privacy-policy-text {
+      width: 213px;
+    }
+  }
+}

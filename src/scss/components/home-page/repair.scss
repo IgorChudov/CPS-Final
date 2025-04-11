@@ -1,0 +1,185 @@
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+.repair_title {
+  margin-bottom: 16px;
+}
+.repair {
+  border-bottom: 1px solid _var.$border;
+  padding-bottom: 16px;
+  position: relative;
+}
+.repair-container {
+  margin-bottom: 16px;
+}
+
+.repair-slider .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.repair-slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: _var.$light-grey;
+}
+
+.repair-slider {
+  height: 188px;
+  position: relative;
+  overflow: hidden;
+  padding-left: 16px;
+}
+
+.repair-slider__slide {
+  background-color: _var.$white;
+  border: 1px solid _var.$swiper-border;
+  border-radius: 6px;
+  padding: 16px;
+  height: 160px;
+  margin-right: 16px;
+}
+
+.repair-card-desktop-container {
+  display: none;
+}
+
+.repair-card {
+  position: relative;
+  height: 100%;
+}
+
+.repair-card__title {
+  font-weight: 600;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.repair-card-btn--position {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.subtitle-repair--mg {
+  margin-bottom: 16px;
+}
+
+.repair-card-desktop-container {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.repair-card-desktop-wrap {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-height: 160px;
+  overflow: hidden;
+  transition: all 0.75s;
+}
+
+.repair-card-desktop-wrap--mg {
+  margin: 0 -6px 12px -6px;
+}
+
+.repair-card-wrap--active {
+  max-height: 345px;
+}
+
+.repair-card-desktop {
+  height: 160px;
+}
+
+.repair-card-desktop--mg {
+  margin: 0 12px 12px 12px;
+}
+
+.repair-card-hidden768,
+.repair-card-hidden1440 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.repair-card-hidden1440 {
+  display: none;
+}
+.repair-control {
+  display: none;
+}
+
+@include _mix.xl {
+  .repair-slider {
+    display: none;
+  }
+
+  .repair-slider__slide {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 16px;
+    width: 240px;
+    height: 160px;
+  }
+
+  .repair-card {
+    width: 224px;
+    height: 160px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 16px;
+  }
+
+  .repair-card-btn--position {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .repair {
+    padding-bottom: 31px;
+  }
+
+  .subtitle-repair--mg {
+    margin-bottom: 24px;
+  }
+
+  .repair-card-desktop-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .repair-card-desktop {
+    width: calc(33.074% - 30px);
+  }
+
+  .price-slider {
+    display: none;
+  }
+  .repair-control {
+    display: flex;
+  }
+}
+@include _mix.xxl {
+  .repair {
+    padding-bottom: 49px;
+  }
+
+  .repair-card {
+    width: 240px;
+  }
+
+  .repair-card--mg {
+    margin-right: 32px;
+  }
+
+  .repair-card-desktop {
+    width: calc((86.79% - 12px) / 4);
+  }
+
+  .repair-card-hidden1440 {
+    display: block;
+  }
+}

@@ -1,8 +1,63 @@
-@use '/../src/scss/abstracts/__var';
-@use '/../src/scss/abstracts/__mix';
-h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+
+.header {
+  height: 88px;
+  background-color: _var.$white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid _var.$border;
+  margin-bottom: 24px;
+
+  &-menu {
+  }
+}
+.list-container,
+.list-container-no-mobile {
+  display: flex;
+  align-items: center;
+}
+.main-desktop-container,
+.section-reviews,
+.menu-divider1 {
+  display: none;
+}
+.menu-divider-2 {
+  position: absolute;
+  top: 24px;
+}
+.menu-list {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+}
+.list-container-no-mobile li:nth-child(1),
+.list-container-no-mobile li:nth-child(2),
+.list-container-no-mobile li:nth-child(3) {
+  display: none;
+}
+@include _mix.xl {
+  .list-container-no-mobile li:nth-child(1),
+  .list-container-no-mobile li:nth-child(2),
+  .list-container-no-mobile li:nth-child(3) {
+    display: block;
+  }
+  .menu-divider1 {
+    display: inline-block;
+    padding: 5px 10px 0px 10px;
+  }
+  .menu__list {
+    justify-content: space-between;
+  }
+}
+@include _mix.xxl {
+  .header {
+    display: none;
+  }
 }

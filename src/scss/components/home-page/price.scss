@@ -1,0 +1,144 @@
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+.price_title {
+  margin-bottom: 16px;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.price--mg {
+  margin-bottom: 6px;
+}
+
+.price-slider .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.price-slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: _var.$light-grey;
+}
+
+.price-slider {
+  position: relative;
+  overflow: hidden;
+  padding-left: 16px;
+  height: 229px;
+}
+
+.price-slider__slide {
+  height: 200px;
+  background-color: _var.$white;
+  border: 1px solid _var.$swiper-border;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.price-slider__slide--mg {
+  margin-right: 16px;
+}
+
+.price-slider__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.price-slider__title {
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.price-slider__title--mg {
+  margin-bottom: 4px;
+}
+
+.price-slider__text {
+  font-size: 14px;
+  line-height: 18px;
+  color: #1b1c21;
+}
+
+.price-slider__text--mg {
+  margin-bottom: 16px;
+}
+
+.price-desktop-wrap {
+  display: none;
+}
+@include _mix.xl {
+  .price-slider {
+    display: none;
+  }
+  .price-desktop-wrap {
+    display: block;
+  }
+
+  .price-desktop-wrap--mg {
+    margin-bottom: 24px;
+  }
+
+  .price-desktop-title {
+    display: grid;
+    grid-template-columns: 66% 10% 15%;
+    padding: 0 16px;
+  }
+
+  .price-desktop-title__text {
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.7218000000000001;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .price-desktop-title--mg {
+    margin-bottom: 16px;
+  }
+
+  .price-desktop-list {
+    display: grid;
+    grid-template-columns: 65% 10% 15% 11%;
+    grid-template-rows: 64px 64px 64px 64px 64px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 0 16px;
+  }
+
+  .price-desktop-list__wrap {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .price-desktop-list__wrap--no-border {
+    border: none;
+  }
+
+  .price-desktop-list__item-text {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+@include _mix.xxl {
+  .price-desktop-title {
+    grid-template-columns: 470px 227px 192px;
+  }
+
+  .price-desktop-list {
+    grid-template-columns: 470px 227px 192px 119px;
+    padding: 0 24px;
+  }
+}

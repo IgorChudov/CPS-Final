@@ -1,0 +1,42 @@
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+.menu-link {
+  color: _var.$grey;
+  display: block;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+.menu__item {
+  margin-right: 16px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.menu-list {
+  margin: 0px 0 24px 16px;
+  &__item-active {
+    border: 2px solid _var.$border;
+    border-radius: 6px;
+    background-color: _var.$white;
+  }
+}
+
+@include _mix.xl {
+  .menu-list {
+    margin: 32px 0 32px 24px;
+  }
+}
+
+@include _mix.xxl {
+  .menu-list {
+    flex-wrap: wrap;
+    margin-left: 2px;
+    margin: 8px 0 34px 16px;
+  }
+}

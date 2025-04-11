@@ -1,2 +1,78 @@
-@use '/../src/scss/abstracts/__var';
-@use '/../src/scss/abstracts/__mix';
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+
+.visually-hidden {
+  visibility: hidden;
+}
+.modal-title {
+  margin-left: 25px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  &__text {
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    font-weight: 600;
+  }
+  &__line {
+    border-radius: 0 13px 13px 0;
+    width: 4px;
+    height: 40px;
+    background-color: _var.$light-aqua;
+    margin-left: -42px;
+    margin-right: 10px;
+  }
+}
+.modal-privacy-policy {
+  font-size: 14px;
+  margin-bottom: 19px;
+  &-link {
+    transition: all 0.4s;
+    color: _var.$btn-background;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.input-form {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #eaeaea;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 16px;
+}
+.input-form:focus,
+.textarea-form:focus {
+  border: 2px solid rgb(128, 0, 0);
+}
+
+.textarea-form {
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: 2px solid #eaeaea;
+  border-radius: 8px;
+  height: 118px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+.textarea-form::placeholder,
+.input-form::placeholder {
+  font-family: "TT Lakes";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.sumbit-form-btn__wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@include _mix.xxl {
+  .modal-title {
+    margin-top: -38px;
+  }
+}

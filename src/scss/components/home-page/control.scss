@@ -1,0 +1,59 @@
+@use "/../src/scss/abstracts/__var";
+@use "/../src/scss/abstracts/__mix";
+.control {
+  display: flex;
+  height: 24px;
+  padding-left: 24px;
+  &-wrap {
+    width: 99%;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+.control-icon {
+  width: 7.41px;
+  height: 10.29px;
+  background-image: url("/src/icons/arrow.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &-wrap {
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+  &--mg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.control-name {
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  letter-spacing: -0.2px;
+  transition: all 0.4s;
+  font-family: "TT Lakes";
+  color: _var.$black;
+}
+
+.about__control {
+  padding-left: 0px !important;
+  margin-bottom: 16px;
+}
+.repair-control {
+  display: none;
+}
+
+@include _mix.xl {
+  .repair-control {
+    display: flex;
+  }
+}
+@include _mix.xxl {
+}
