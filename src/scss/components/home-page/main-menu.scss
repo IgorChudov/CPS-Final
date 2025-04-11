@@ -9,6 +9,8 @@
   padding: 8px 16px;
   border: 2px solid transparent;
   text-decoration: none;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
   transition: all 0.4s;
 }
 .menu__item {
@@ -35,7 +37,8 @@
 
 @include _mix.xxl {
   .menu-list {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-left: 2px;
     margin: 8px 0 34px 16px;
   }

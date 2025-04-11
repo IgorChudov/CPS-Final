@@ -25,9 +25,15 @@
   border-radius: 6px;
   padding: 16px;
   height: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .brand-slider__slide--mg {
@@ -41,10 +47,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
   transition: all 0.4s;
 }
 .brand-slider__link:hover {
-  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
+      -ms-transform: scale(1.04);
+          transform: scale(1.04);
 }
 .brand-card-desktop-container {
   display: none;
@@ -54,18 +64,32 @@
     display: none;
   }
   .brand-card-desktop-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 16px;
   }
   .brand-card-desktop-wrap {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-height: 160px;
     overflow: hidden;
+    -webkit-transition: all 0.75s;
+    -o-transition: all 0.75s;
     transition: all 0.75s;
   }
   .brand-card-wrap--active {
@@ -82,9 +106,15 @@
     padding: 20px 16px;
     width: calc(33.074% - 30px);
     height: 72px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .brand-card-desktop--mg {
