@@ -2,8 +2,13 @@
 @use "/../src/scss/abstracts/__mix";
 
 .dropdown {
-  flex-direction: column;
-  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   top: 0px;
   margin: 0px;
@@ -14,12 +19,19 @@
   visibility: hidden;
   height: 100vh;
   left: 0;
-  transform: translateX(-500px);
-  box-shadow: _var.$dropdown-shadow;
+  -webkit-transform: translateX(-500px);
+      -ms-transform: translateX(-500px);
+          transform: translateX(-500px);
+  -webkit-box-shadow: _var.$dropdown-shadow;
+          box-shadow: _var.$dropdown-shadow;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
   transition: all 0.6s;
 
   &-container__active {
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
     visibility: visible;
   }
   &-menu {
@@ -32,8 +44,12 @@
     padding-right: 20px;
   }
   &__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 .dropdown-main-menu {
@@ -42,7 +58,7 @@
   &__list {
     margin-bottom: 1em;
 
-    &-item__link--disabled {
+    &-item__link {
       display: block;
       position: relative;
       font-size: 16px;
@@ -52,7 +68,7 @@
       margin-left: 24px;
       margin-bottom: 20px;
     }
-    &-item__link--active {
+    &-item__link:focus {
       display: block;
       position: relative;
       font-size: 16px;
@@ -63,7 +79,7 @@
       margin-bottom: 20px;
     }
 
-    &-item__link--active::before {
+    &-item__link:focus::before {
       content: url(/src/icons/highlight.svg);
       position: absolute;
       top: -6px;
@@ -75,9 +91,16 @@
   padding: 20px 0px 0px 0px;
 
   &-menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-left: 24px;
     margin-bottom: 12px;
   }
@@ -89,8 +112,13 @@
   }
 }
 .dropdown-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-left: 24px;
   gap: 12px;
 
@@ -120,9 +148,12 @@
 }
 @include _mix.xxl {
   .dropdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     top: 0px;
     left: 500px;
     height: auto;

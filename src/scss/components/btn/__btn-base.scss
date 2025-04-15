@@ -116,11 +116,6 @@
     right: 0;
   }
 }
-.menu-link__item-active {
-  border: 2px solid _var.$border;
-  border-radius: 6px;
-}
-
 .menu-button {
   &:hover {
     background-color: _var.$btn-background-hover;
@@ -141,7 +136,7 @@
     background-color: _var.$btn-background-active;
   }
 }
-.dropdown-main-menu__list-item__link--hover {
+.dropdown-main-menu__list-item__link {
   &:hover {
     color: _var.$btn-background-hover;
     -webkit-transform: translateY(2px);
@@ -150,6 +145,9 @@
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
+  }
+  &:focus {
+    
   }
 }
 .dropdown-contact__mail {
@@ -221,6 +219,11 @@
 }
 .menu-link {
   &:hover {
+    border: 2px solid _var.$border;
+    border-radius: 6px;
+    background-color: _var.$white;
+  }
+  &:focus {
     border: 2px solid _var.$border;
     border-radius: 6px;
     background-color: _var.$white;
