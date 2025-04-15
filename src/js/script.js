@@ -1,12 +1,10 @@
 // кнопки
 const btnBurger = document.querySelector('.menu-button__burger');
 const btnBurgerClose = document.querySelector('.menu-button__close');
-const btnCall = document.querySelector('.menu-button__call');
-const btnMessage = document.querySelector('.menu-button__chat');
+const btnCall = document.querySelectorAll('.menu-button__call');
+const btnMessage = document.querySelectorAll('.menu-button__chat');
 const btnCallClose = document.querySelector('.modal-call__btn-close');
 const btnMessageClose = document.querySelector('.modal-message__btn-close');
-const btnCallDd = document.querySelector('.dropdown-footer-button__call');
-const btnMessageDd = document.querySelector('.dropdown-footer-button__chat');
 const body = document.querySelector('body');
 const veil = document.querySelector('.page-container__veil');
 const aboutControl = document.querySelector('.about__control');
@@ -42,31 +40,20 @@ btnBurgerClose.addEventListener('click', function () {
 	bodyMain.classList.remove('overflow-block');
 });
 
-btnCall.addEventListener('click', function () {
-	if (!modalCall.classList.contains('modal-call__active')) {
-		modalCall.classList.add('modal-call__active');
-		veil.classList.add('page-container__veil--active');
-		bodyMain.classList.add('overflow-block');
-		modalMessage.classList.remove('modal-message__active');
-	} else {
-		modalCall.classList.remove('modal-call__active');
-		veil.classList.remove('page-container__veil--active');
-		bodyMain.classList.remove('overflow-block');
-	}
-});
-
-btnCallDd.addEventListener('click', function () {
-	if (!modalCall.classList.contains('modal-call__active')) {
-		modalCall.classList.add('modal-call__active');
-		veil.classList.add('page-container__veil--active');
-		bodyMain.classList.add('overflow-block');
-		modalMessage.classList.remove('modal-message__active');
-	} else {
-		modalCall.classList.remove('modal-call__active');
-		veil.classList.remove('page-container__veil--active');
-		bodyMain.classList.remove('overflow-block');
-	}
-});
+for(let call of btnCall){
+  call.addEventListener('click', function () {
+    if (!modalCall.classList.contains('modal-call__active')) {
+      modalCall.classList.add('modal-call__active');
+      veil.classList.add('page-container__veil--active');
+      bodyMain.classList.add('overflow-block');
+      modalMessage.classList.remove('modal-message__active');
+    } else {
+      modalCall.classList.remove('modal-call__active');
+      veil.classList.remove('page-container__veil--active');
+      bodyMain.classList.remove('overflow-block');
+    }
+  });
+}
 
 btnCallClose.addEventListener('click', function () {
 	modalCall.classList.remove('modal-call__active');
@@ -74,31 +61,20 @@ btnCallClose.addEventListener('click', function () {
 	bodyMain.classList.remove('overflow-block');
 });
 
-btnMessage.addEventListener('click', function () {
-	if (!modalMessage.classList.contains('modal-message__active')) {
-		modalMessage.classList.add('modal-message__active');
-		veil.classList.add('page-container__veil--active');
-		bodyMain.classList.add('overflow-block');
-		modalCall.classList.remove('modal-call__active');
-	} else {
-		modalMessage.classList.remove('modal-message__active');
-		veil.classList.remove('page-container__veil--active');
-		bodyMain.classList.remove('overflow-block');
-	}
-});
-
-btnMessageDd.addEventListener('click', function () {
-	if (!modalMessage.classList.contains('modal-message__active')) {
-		modalMessage.classList.add('modal-message__active');
-		veil.classList.add('page-container__veil--active');
-		bodyMain.classList.add('overflow-block');
-		modalCall.classList.remove('modal-call__active');
-	} else {
-		modalMessage.classList.remove('modal-message__active');
-		veil.classList.remove('page-container__veil--active');
-		bodyMain.classList.remove('overflow-block');
-	}
-});
+for(let message of btnMessage){
+  message.addEventListener('click', function () {
+    if (!modalMessage.classList.contains('modal-message__active')) {
+      modalMessage.classList.add('modal-message__active');
+      veil.classList.add('page-container__veil--active');
+      bodyMain.classList.add('overflow-block');
+      modalCall.classList.remove('modal-call__active');
+    } else {
+      modalMessage.classList.remove('modal-message__active');
+      veil.classList.remove('page-container__veil--active');
+      bodyMain.classList.remove('overflow-block');
+    }
+  });
+}
 
 btnMessageClose.addEventListener('click', function () {
 	modalMessage.classList.remove('modal-message__active');
