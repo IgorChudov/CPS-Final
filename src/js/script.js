@@ -5,7 +5,6 @@ const btnCall = document.querySelectorAll('.menu-button__call');
 const btnMessage = document.querySelectorAll('.menu-button__chat');
 const btnCallClose = document.querySelector('.modal-call__btn-close');
 const btnMessageClose = document.querySelector('.modal-message__btn-close');
-const body = document.querySelector('body');
 const veil = document.querySelector('.page-container__veil');
 const aboutControl = document.querySelector('.about__control');
 const brandControl = document.querySelector('.brand-control');
@@ -16,7 +15,6 @@ const dropdown = document.querySelector('.dropdown');
 const modalCall = document.querySelector('.modal-call');
 const modalMessage = document.querySelector('.modal-message');
 const hiddenText = document.querySelector('.about-text-section');
-const btnMoreInfoAbout = document.querySelector('.about__control');
 const moreInfoTextAbout = document.querySelector('.about__control-name');
 const arrowAbout = document.querySelector('.about__control-icon');
 const hiddenTextAbout = document.querySelector('.about-text-section__hidden');
@@ -40,8 +38,8 @@ btnBurgerClose.addEventListener('click', function () {
 	bodyMain.classList.remove('overflow-block');
 });
 
-for(let call of btnCall){
-  call.addEventListener('click', function () {
+for (let i = 0; i < btnCall.length; i++) {
+  btnCall[i].addEventListener('click', function () {
     if (!modalCall.classList.contains('modal-call__active')) {
       modalCall.classList.add('modal-call__active');
       veil.classList.add('page-container__veil--active');
@@ -61,8 +59,8 @@ btnCallClose.addEventListener('click', function () {
 	bodyMain.classList.remove('overflow-block');
 });
 
-for(let message of btnMessage){
-  message.addEventListener('click', function () {
+for(let i = 0; i < btnMessage.length; i++){
+  btnMessage[i].addEventListener('click', function () {
     if (!modalMessage.classList.contains('modal-message__active')) {
       modalMessage.classList.add('modal-message__active');
       veil.classList.add('page-container__veil--active');
